@@ -8,6 +8,12 @@
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
+
+ /* This code was built with the with the assistance of Udacity's   
+  * webinar by @RyanWaite, Feed Reeder Testing (P4) Oct-2 
+  * https://bit.ly/2F0ZrDS
+  */
+
 $(function() {
     /* This is our first test suite - a test suite just contains
     * a related set of tests. This suite is all about the RSS
