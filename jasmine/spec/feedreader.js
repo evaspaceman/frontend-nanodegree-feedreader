@@ -79,6 +79,8 @@ $(function() {
         it('menu changes visibility when clicked', function() {
             menu.click();
             expect(body.classList.contains('menu-hidden')).toBe(false);
+            menu.click();
+            expect(body.classList.contains('menu-hidden')).toBe(true);
         });
 
     });
@@ -110,20 +112,18 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
         let initialFeed;
-        let nextFeed;
 
         beforeEach(function(done) {
             loadFeed(0, function() {
                 initialFeed = document.querySelector('div.feed').innerHTML;
             });
             loadFeed(1,function() {
-                nextFeed = document.querySelector('div.feed').innerHTML;
                 done();
             });
         });
     
         it('loadFeed content changes', function() {
-            expect(initialFeed).not.toBe(nextFeed);
+            expect(initialFeed).not.toBe(document.querySelector('div.feed').innerHTML);
         });
     });
 }());
